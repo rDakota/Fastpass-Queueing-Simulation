@@ -1,6 +1,6 @@
 # Fastpass-Queueing-Simulation
 
-Discrete-event simuation strategy to model a version of Disney's FastPass+ system.
+Discrete-event simuation strategy to model a version of Disney's FastPass+ system
 
 There are two classes of customers:
 * FastPass holders, who have higher priority.
