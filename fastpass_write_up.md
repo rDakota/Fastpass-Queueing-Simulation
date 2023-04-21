@@ -1,7 +1,0 @@
-# FastPass+ Write Up
-
-Based on the data from the Fastpass+ simulation and the accompanying Graphs for Low Load and High Load, Good operating values for f (the fraction of FastPasses) seem as though they should be different for both High and Low Loads
-
-* With the Low Load of lamda = 0.50, an average residence time of 1.30 minutes and a ratio of 0.55 customers with a fastpass seems to best minimize waittimes for both regular and fastpass customers (have the same average residence times for both regular and fastpass). However, if the desire is for fastpass customers to have a noticably smaller wait time than regular customers, then a more adequate operating values would be something > 0.55 and < 1.0. This would ensure that fastpass customers always have a shorter wait time than regular customers
-
-* With the high load of lamda = 0.95, an average residence time of 1.61 minutes and a ratio of 0.60 customers with a fastpass seems to best minimize waittimes for both regular and fastpass customers (have the same average residence times for both regular and fastpass). Likewise to the Low load, if the desire is for fastpass customers to have a noticably smaller wait time than regular customers, then a more adequate operating values would be something > 0.60 and < 1.0. This would ensure that fastpass customers always have a shorter wait time than regular customers
