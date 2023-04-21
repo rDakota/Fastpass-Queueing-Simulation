@@ -243,10 +243,10 @@ def simulate_and_plot_high(arrival_rate):
   # plot fastpass and regular
   plt.plot(high_load_residence_times_fastpass.keys(),
          high_load_residence_times_fastpass.values(),
-          color='green')
+          color='lightblue')
   plt.plot(high_load_residence_times_regular.keys(),
          high_load_residence_times_regular.values(),
-          color='lightblue')
+          color='green')
 
   # find the x-coordinate where the two lines meet
   intersection_fp_frac = min(high_load_residence_times_regular, key=lambda x: abs(high_load_residence_times_regular[x] - high_load_residence_times_fastpass[x]))
@@ -271,7 +271,7 @@ def simulate_and_plot_high(arrival_rate):
   x_start = round(intersection_fp_frac, 2)
 
   # create an array of boolean values based on the x-values of the data
-  fill_mask = [(x >= x_start) for x in x1]
+  fill_mask = [(x <= x_start) for x in x1]
 
   # Fill between
   plt.fill_between(x1, y1, y2, where=fill_mask, interpolate=True, color='yellow', alpha=0.2)
@@ -279,7 +279,7 @@ def simulate_and_plot_high(arrival_rate):
   # labeling of graph info
   plt.xlabel("Fastpass Customer Ratio")
   plt.ylabel("Avg. Residence Time (minutes)")
-  plt.legend(["Regular", "Fastpass"], loc="upper right")
+  plt.legend(["Fastpass", "Regular"], loc="upper right")
   # y vs. x axis
   plt.title("Avg. Residence Time Vs Fastpass Customer Ratio\nHigh Load Simulation")
   plt.savefig('Residence_Times_High_Load.pdf')
@@ -317,10 +317,10 @@ def simulate_and_plot_low(arrival_rate):
   # plot fastpass and regular
   plt.plot(low_load_residence_times_fastpass.keys(),
          low_load_residence_times_fastpass.values(),
-          color='green')
+          color='lightblue')
   plt.plot(low_load_residence_times_regular.keys(),
          low_load_residence_times_regular.values(),
-          color='lightblue')
+          color='green')
 
   # find the x-coordinate where the two lines meet
   intersection_fp_frac = min(low_load_residence_times_regular, key=lambda x: abs(low_load_residence_times_regular[x] - low_load_residence_times_fastpass[x]))
@@ -345,7 +345,7 @@ def simulate_and_plot_low(arrival_rate):
   x_start = round(intersection_fp_frac, 2)
 
   # create an array of boolean values based on the x-values of the data
-  fill_mask = [(x >= x_start) for x in x1]
+  fill_mask = [(x <= x_start) for x in x1]
 
   # Fill between
   plt.fill_between(x1, y1, y2, where=fill_mask, interpolate=True, color='yellow', alpha=0.2)
@@ -353,7 +353,7 @@ def simulate_and_plot_low(arrival_rate):
   
   plt.xlabel("Fastpass Customer Ratio")
   plt.ylabel("Avg. Residence Time (minutes)")
-  plt.legend(["Regular", "Fastpass"], loc="lower right")
+  plt.legend(["Fastpass", "Regular"], loc="lower right")
   # y vs. x axis
   plt.title("Avg. Residence Time Vs Fastpass Customer Ratio\nLow Load Simulation")
   plt.savefig('Residence_Times_Low_load.pdf')
